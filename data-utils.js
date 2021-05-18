@@ -26,3 +26,15 @@ export function mungeNames(pokemonArray) {
 
     return results;
 } 
+
+export function mungeEncounters(pokemonArray) {
+
+    const results = [];
+
+    for (let poke of pokemonArray) {
+
+        results.push(poke.encounters);
+    }
+
+    return (results);
+}
