@@ -53,7 +53,7 @@ let myChart = new Chart(ctx, {
 
 resetButton.addEventListener('click', ()=> {
 
-    window.location.replace('./');
+    window.location.replace('../');
 
     
 
