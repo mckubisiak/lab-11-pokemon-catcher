@@ -35,7 +35,7 @@ button.addEventListener('click', () => {
 
     if (totalCaptured >= 10) {
 
-        window.location.replace('/results');
+        window.location.replace('./results');
 
     } else {
 
