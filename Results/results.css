@@ -1,7 +1,11 @@
 canvas {
-    display:inline;
+    display: block;
     max-height: 400px;
     max-width: 70%;
-    margin-right: auto;
-    margin-left: auto;
+}
+
+.chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
