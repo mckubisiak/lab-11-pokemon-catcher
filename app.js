@@ -31,7 +31,7 @@ button.addEventListener('click', () => {
 
     const totalCaptured = getTotalCaptured();
 
-    console.log(totalCaptured);
+    // console.log(totalCaptured);
 
     if (totalCaptured >= 10) {
 
@@ -44,14 +44,6 @@ button.addEventListener('click', () => {
     }
 
 });
-
-
-
-
-
-
-
-
 
 
 function getRandomPokemon() {
@@ -77,7 +69,7 @@ function renderPokemon() {
     while (currentEncounter1.id === currentEncounter2.id 
       || currentEncounter1.id === currentEncounter3.id 
       || currentEncounter2.id === currentEncounter3.id){
-          
+
         currentEncounter1 = getRandomPokemon();
         currentEncounter2 = getRandomPokemon();
         currentEncounter3 = getRandomPokemon();

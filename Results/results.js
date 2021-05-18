@@ -1,18 +1,20 @@
 import { mungeCaptured, mungeNames } from '../data-utils.js';
-import { getPokedex } from '../local-storage-utils.js';
+import { getPokedex, setPokedex } from '../local-storage-utils.js';
 
 const pokedex = getPokedex();
 const names = mungeNames(pokedex);
-console.log(typeof names);
-console.log(names);
+// console.log(typeof names);
+// console.log(names);
 
 
 const captured = mungeCaptured(pokedex);
-console.log(typeof captured);
-console.log(captured);
+// console.log(typeof captured);
+// console.log(captured);
 
 
 let ctx = document.getElementById('myChart').getContext('2d');
+let resetButton = document.getElementById('reset-button');
+
 let myChart = new Chart(ctx, {
     type: 'bar',
     data: {
@@ -46,4 +48,14 @@ let myChart = new Chart(ctx, {
             }
         }
     }
+});
+
+
+resetButton.addEventListener('click', ()=> {
+
+    window.location.replace('/');
+
+
+    setPokedex([]);
+
 });
