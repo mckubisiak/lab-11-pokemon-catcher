@@ -61,5 +61,12 @@ export function catchPokemon(caughtPokemonId){
 
 export function getTotalCaptured() {
 
-    
+    let total = 0;
+    const pokedex = getPokedex();
+
+    for (let poke of pokedex) {
+
+        total += poke.catches;
+    }
+    return total;
 }
