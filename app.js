@@ -20,6 +20,7 @@ renderPokemon();
 button.addEventListener('click', () => {
 
     const selectedPokemon = document.querySelector(':checked');
+
     const selectedPokeId = selectedPokemon.value;
     
   // console.log (selectedPokemon);

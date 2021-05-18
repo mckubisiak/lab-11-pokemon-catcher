@@ -55,6 +55,7 @@ resetButton.addEventListener('click', ()=> {
 
     window.location.replace('/');
 
+    
 
     setPokedex([]);
 
