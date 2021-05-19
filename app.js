@@ -97,7 +97,7 @@ function renderPokemon() {
 
 allDataButton.addEventListener('click', ()=> {
 
-    window.location.replace('../alltimeresults');
+    window.location.replace('./alltimeresults');
 
 });
   // get user input
