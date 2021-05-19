@@ -11,7 +11,7 @@ const radio3 = document.querySelector(`#currentPokemon3`);
 const img1 = document.querySelector(`#poke-img1`);
 const img2 = document.querySelector(`#poke-img2`);
 const img3 = document.querySelector(`#poke-img3`);
-
+const allDataButton = document.querySelector('#alldata-button');
 
 renderPokemon();
 
@@ -95,7 +95,11 @@ function renderPokemon() {
 }
 
 
+allDataButton.addEventListener('click', ()=> {
 
+    window.location.replace('../alltimeresults');
+
+});
   // get user input
   // use user input to update state 
   // update DOM to reflect the new state
