@@ -1,0 +1,11 @@
+canvas {
+    display: block;
+    max-height: 400px;
+    max-width: 70%;
+}
+
+.chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

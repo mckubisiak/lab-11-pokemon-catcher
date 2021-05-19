@@ -1,20 +1,20 @@
+import { getAllData, setPokedex } from '../local-storage-utils.js';
 import { mungeCaptured, mungeNames, mungeEncounters } from '../data-utils.js';
-import { getPokedex, setPokedex } from '../local-storage-utils.js';
 
-const pokedex = getPokedex();
-const names = mungeNames(pokedex);
+
+const alldata = getAllData();
+const names = mungeNames(alldata);
 // console.log(typeof names);
 // console.log(names);
 
-const encounters = mungeEncounters(pokedex);
-const captured = mungeCaptured(pokedex);
+const encounters = mungeEncounters(alldata);
+const captured = mungeCaptured(alldata);
 // console.log(typeof captured);
 // console.log(captured);
 
 
 let ctx = document.getElementById('myChart').getContext('2d');
 let resetButton = document.getElementById('reset-button');
-let allDataButton = document.getElementById('alldata-button');
 
 let myChart = new Chart(ctx, {
     type: 'bar',
@@ -80,17 +80,12 @@ let myChart = new Chart(ctx, {
 
 resetButton.addEventListener('click', ()=> {
 
+
+    
+    
+
     window.location.replace('../');
 
-    setPokedex([]);
 
-});
-
-
-allDataButton.addEventListener('click', ()=> {
-
-    window.location.replace('../alltimeresults');
-
-    setPokedex([]);
 
 });

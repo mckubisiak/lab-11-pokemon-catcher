@@ -1,92 +1,50 @@
-import { mungeCaptured, mungeNames, mungeEncounters } from '../data-utils.js';
-import { getPokedex, setPokedex } from '../local-storage-utils.js';
+<!DOCTYPE html>
+<html lang="en">
 
-const pokedex = getPokedex();
-const names = mungeNames(pokedex);
-// console.log(typeof names);
-// console.log(names);
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/home.css">
+    <link rel="stylesheet" href="alltimeresults.css">
+    <title>Document</title>
+</head>
 
-const encounters = mungeEncounters(pokedex);
-const captured = mungeCaptured(pokedex);
-// console.log(typeof captured);
-// console.log(captured);
+<body>
+    <header>
 
+        <div class="gutter-right logo">
+        </div>
 
-let ctx = document.getElementById('myChart').getContext('2d');
-let resetButton = document.getElementById('reset-button');
+    </header>
 
-let myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: names, encounters,
-        datasets: [{
-            label: '# of Catches',
-            data: captured,
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        },
-        {
-            label: '# of encounters',
-            data: encounters,
-            backgroundColor: [
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1,
-    
-        }]
-    },
+    <div class="chart">
+    <canvas id="myChart"></canvas>
+    </div>
 
+    <main>
 
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
+        <div>
 
+            <button id="reset-button" >Return to Catching!</button>
 
+        </div>
 
+        <br>
 
-resetButton.addEventListener('click', ()=> {
+    </main>
 
+    <footer>
+        <div class="copy gutter-right">&copy; 2021 AlKubi Code Lab</div>
+    </footer>
 
-    
-    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
 
-    window.location.replace('../');
+    <script type="module" src="./alltimeresults.js"></script>
 
-    
+</body>
 
-    setPokedex([]);
-
-});
+</html>
