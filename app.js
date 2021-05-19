@@ -1,6 +1,6 @@
 // import functions and grab DOM elements
 import pokeData from './pokemon.js';
-import { addEncounter, catchPokemon, getTotalCaptured } from './local-storage-utils.js';
+import { addEncounter, catchPokemon, getTotalCaptured, addAllEncounter, catchAllPokemon } from './local-storage-utils.js';
 
 // initialize state
 
@@ -29,6 +29,7 @@ button.addEventListener('click', () => {
   // console.log (typeof selectedPokeId);
 
     catchPokemon(Number(selectedPokeId));
+    catchAllPokemon(Number(selectedPokeId));
 
     const totalCaptured = getTotalCaptured();
 
@@ -75,11 +76,15 @@ function renderPokemon() {
         currentEncounter2 = getRandomPokemon();
         currentEncounter3 = getRandomPokemon();
     }
-
+    
     addEncounter(currentEncounter1.id);
     addEncounter(currentEncounter2.id);
     addEncounter(currentEncounter3.id);
 
+    addAllEncounter(currentEncounter1.id);
+    addAllEncounter(currentEncounter2.id);
+    addAllEncounter(currentEncounter3.id);
+    
     radio1.value = currentEncounter1.id;
     radio2.value = currentEncounter2.id;
     radio3.value = currentEncounter3.id;
